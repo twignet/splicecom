@@ -1,7 +1,7 @@
 # Splicecom Vulnerabilities
 
 ## Background
-Splicecom are a telephony provider providing on-prem and hosted solutions. Their Maximiser S8000 product is a software PBX that can interface with their proprietery phones and apps as well as standard SIP endpoints.
+Splicecom are a telephony provider providing on-prem and hosted solutions. Their Maximiser S8000 product is a software PBX that can interface with their proprietary phones and apps as well as standard SIP endpoints.
 
 To provide a solution for remote/mobile users they have a product called SSL Gateway (previously iPCS Gateway). 
 
@@ -11,7 +11,7 @@ https://splicecom.com/resources/platforms_&_deployment_2015.pdf
 There are a number of weaknesses in this system, so the name SL Gateway is probably more apt.
 
 The SSL gateway runs on a Linux server (usually the same as the Maximiser system) and enables remote users to connect to the Maximiser system to make and receive calls over the internet. 
-The client could be a PCS Handset or an Android or iOS device runnining the iPCS app.
+The client could be a PCS Handset or an Android or iOS device running the iPCS app.
 
 Remote authentication to the system is very basic prior to version 1.5, and accounts are protected by simply the extension number (e.g. 2001) and a passcode (e.g. 1234)
 
@@ -75,7 +75,7 @@ In order to authenticate to a remote SSL gateway we need 2 things:
 
 Available SSL gateways could be enumerated by looking for the subject in the certificate or the default thumbprint. The port is usually 5000.
 
-Usernames are usually 3 or 4 digits. They will often be sequential. For a lot of companies they will simply be the last 4 digits of a users phone number. This is often easy to find using standad OSINT techniques.
+Usernames are usually 3 or 4 digits. They will often be sequential. For a lot of companies they will simply be the last 4 digits of a users phone number. This is often easy to find using standard OSINT techniques.
 
 I have provided a multi-threaded brute forcer as a proof of concept. This script also makes it easy to generate a valid push token. Further information at the bottom of this page.
 
@@ -94,7 +94,7 @@ Installations of the SSL Gateway will use a vendor supplied self-signed SSL cert
 
 There are no prompts during installation or in the management interface to change this certificate. This is a poor default and of course as a result there are a large number of deployments still using this.
 
-The default certificate has a thumbprint of `f486aa65f6a077a50c9028d34a07216c59d34d29` and it is available in this repo as defaut.pem.
+The default certificate has a thumbprint of `f486aa65f6a077a50c9028d34a07216c59d34d29` and it is available in this repo as default.pem.
 
 An older default certificate with thumbprint `ea00c066e3fa1ac2a63c126443c22a42b38cdf32` is also provided as default2.pem.
 
@@ -132,8 +132,8 @@ Starting with system version 1.5 a number of changes have been made:
    - This is not on by default
    - Requires iPCS2 (iOS) v2.9 or iPCS (Android) v1.8.6 or newer
    - A default client certificate is bundled in the Apps (i have extracted this as sslprov.pem in the repo)
-   - On first connection this certificate can be replaced with a customer specific secondary certificate, downloaded from the gateway. This certificate is shared amoungst all users
-   - A server side paramter exists to only trust these "secondary" certificates
+   - On first connection this certificate can be replaced with a customer specific secondary certificate, downloaded from the gateway. This certificate is shared amongst all users
+   - A server side parameter exists to only trust these "secondary" certificates
 
 
 ## iPCS Brute Forcer
@@ -154,7 +154,7 @@ If no valid PIN is found it will then continue with a sequential brute force up 
 
 A valid username and passcode may be rejected if:
  - The push token is invalid or has been registered on another system 
- - The brute force speed is too fast and is overwheling the remote system
+ - The brute force speed is too fast and is overwhelming the remote system
 
 3 threads and a speed setting of medium is usually fine. 4 threads and fast is likely fine, depending on target hardware. More than that you may get false negative results.
 
