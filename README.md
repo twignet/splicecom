@@ -89,7 +89,7 @@ This affects the following applications:
 
 Without trust validation the effectiveness of SSL is drastically reduced. MiTM attacks are easy and effective since authentication credentials are sent in clear text over the TLS connection.
 
-### CVE-2023-33759 - Default SSL certificate on SSL Gateway
+### CVE-2023-33760 - Default SSL certificate on SSL Gateway
 Installations of the SSL Gateway will use a vendor supplied self-signed SSL certificate.
 
 There are no prompts during installation or in the management interface to change this certificate. This is a poor default and of course as a result there are a large number of deployments still using this.
