@@ -98,7 +98,7 @@ The default certificate has a thumbprint of `f486aa65f6a077a50c9028d34a07216c59d
 
 An older default certificate with thumbprint `ea00c066e3fa1ac2a63c126443c22a42b38cdf32` is also provided as default2.pem.
 
-Even when CVE-2023-33759 is fixed, the apps will continue to trust these vendor certificates due to their wide deployment ¯\_(ツ)_/¯
+Even when CVE-2023-33759 is fixed, the apps will continue to trust these vendor certificates due to their wide deployment ¯\\_(ツ)_/¯
 
 ### CVE-2023-33758 - XSS / User input not sanitised
 In just the login message alone there are two fields that can accept arbitrary data.
