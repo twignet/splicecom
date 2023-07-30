@@ -147,7 +147,7 @@ When you run the tool without providing a token it will start a listening servic
 
 The tool will try a list of the most common 4 digit PINs, included in the file `dictionary.txt`. You can add to this file. 
 
-It no valid PIN is found it will then continue with a sequential brute force up to 999999.
+If no valid PIN is found it will then continue with a sequential brute force up to 999999.
 
 
 #### Tips
