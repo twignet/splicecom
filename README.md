@@ -123,6 +123,7 @@ LOGIN,2003,1234,1234,IPCS 2.7.2<script>alert(\'javascript\')</script>,75,0000000
 This results in:
 ![CVE-2023-33758](https://github.com/twignet/splicecom/blob/master/CVE-2023-33758.png?raw=true)
 
+This is fixed in version 1.5 by escaping the output in the management interface.
 
 ## Improvements in future Maximiser versions
 Starting with system version 1.5 a number of changes have been made:
