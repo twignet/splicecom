@@ -65,7 +65,7 @@ A push token doesn't last forever and can be invalidated by a number of events. 
 ### CVE-2023-33759 - Lack of brute force protection
 If authentication fails to the SSL Gateway the system does not close the connection, so another attempt can be made immediately.
 
-Up until version 1.5 there is no rate limiting on failed attempts.
+Up until version 1.5 of the SV1000 product there is no rate limiting on failed attempts. Starting with version 1.5 a new "Access Control" feature has been adding, allowing rate limiting and IP banning. However this feature is not advertised or enabled by default, so uptake will be low.
 
 As such all 4 digit PIN combinations could be tried in around 90 seconds.
 
@@ -89,6 +89,10 @@ This affects the following applications:
 
 Without trust validation the effectiveness of SSL is drastically reduced. MiTM attacks are easy and effective since authentication credentials are sent in clear text over the TLS connection.
 
+Improvements have been made to trust and name validation in the latest apps but they are not 100% and the default vendor certificate remains trusted by default.
+
+Furthermore certificate name validation and revocation checking do not to be fully implemented. 
+
 ### CVE-2023-33760 - Default SSL certificate on SSL Gateway
 Installations of the SSL Gateway will use a vendor supplied self-signed SSL certificate.
 
@@ -98,7 +102,9 @@ The default certificate has a thumbprint of `f486aa65f6a077a50c9028d34a07216c59d
 
 An older default certificate with thumbprint `ea00c066e3fa1ac2a63c126443c22a42b38cdf32` is also provided as default2.pem.
 
-Even when CVE-2023-33759 is fixed, the apps will continue to trust these vendor certificates due to their wide deployment ¯\\_(ツ)_/¯
+Starting with SV1000 version 1.5 a "trust default certificate" option has been provided. This can steer newer clients running (iPCS2 for iOS App v2.9 and above and iPCS for Android v1.8.6 and above) to reject the default vendor certificate. I would consider this a partial fix since 1) It is not on by default, 2) A connection needs to be established before this configuration data is downloaded to the app.
+
+Splicecom have not shared when a complete fix for this will be available and the apps will continue to trust these vendor certificates by default due to their wide deployment ¯\\_(ツ)_/¯
 
 ### CVE-2023-33758 - XSS / User input not sanitised
 In just the login message alone there are two fields that can accept arbitrary data.
@@ -123,7 +129,7 @@ LOGIN,2003,1234,1234,IPCS 2.7.2<script>alert('javascript')</script>,75,00000000-
 This results in:
 ![CVE-2023-33758](https://github.com/twignet/splicecom/blob/master/CVE-2023-33758.png?raw=true)
 
-This is fixed in version 1.5 by escaping the output in the management interface.
+This is fixed in SV1000 version 1.5 by escaping the output in the management interface.
 
 ## Improvements in future Maximiser versions
 Starting with system version 1.5 a number of changes have been made:
