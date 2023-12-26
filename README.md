@@ -91,7 +91,7 @@ Without trust validation the effectiveness of SSL is drastically reduced. MiTM a
 
 Improvements have been made to trust and name validation in the latest apps but they are not 100% and the default vendor certificate remains trusted by default.
 
-Furthermore certificate name validation and revocation checking do not to be fully implemented. 
+Furthermore certificate name validation and revocation checking do not appear to be fully implemented. 
 
 ### CVE-2023-33760 - Default SSL certificate on SSL Gateway
 Installations of the SSL Gateway will use a vendor supplied self-signed SSL certificate.
