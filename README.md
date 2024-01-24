@@ -1,7 +1,7 @@
 # Splicecom Vulnerabilities
 
 ## Background
-Splicecom are a telephony provider providing on-prem and hosted solutions. Their Maximiser S8000 product is a software PBX that can interface with their proprietary phones and apps as well as standard SIP endpoints.
+Splicecom are a telephony provider providing on-prem and hosted solutions. Their Maximiser Soft PBX product is a software PBX that can interface with their proprietary phones and apps as well as standard SIP endpoints. The Maximiser platfornm drives a number of products for example the current S8000 series soft PBX as well as older 5000 series hardware PBX models.
 
 https://www.splicecom.com/products-services/voice-platforms/s8000-soft-pbx
 
